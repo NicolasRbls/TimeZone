@@ -1,0 +1,157 @@
+/* 🌟 Style rétro fait maison 🌟 */
+
+/* ---- Fond et police générale ---- */
+body {
+    width: 350px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #1a1a1a 20%, #292929 80%);
+    color: #f8f8f2;
+    font-family: "Press Start 2P", sans-serif;
+}
+
+/* ---- Effet écran cathodique ---- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ---- Titre principal ---- */
+h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #ffcc00;
+    color: #1a1a1a;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0px #000;
+}
+
+/* ---- Conteneur du graphique ---- */
+#chartContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+canvas {
+    display: block;
+    max-width: 100% !important;
+    max-height: 280px !important; /* Augmenter la hauteur */
+}
+
+
+
+/* ---- Conteneur du tableau ---- */
+#tableContainer {
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    background: #2b2b2b;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid #ffcc00;
+    box-shadow: inset 3px 3px 0px #000;
+}
+
+/* ---- Tableau des statistiques ---- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffcc00;
+    table-layout: fixed; /* Fixe la largeur des colonnes */
+}
+
+th, td {
+    border: 2px solid #ffcc00;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer; /* Indique que c'est cliquable */
+    white-space: nowrap; /* Évite les sauts de ligne */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Coupe le texte proprement */
+}
+
+/* Correction pour s'assurer que le texte est bien centré verticalement */
+td {
+    vertical-align: middle;
+}
+
+/* Ajout d'un effet au survol pour mieux identifier ce qui est cliquable */
+td:hover {
+    background: rgba(255, 204, 0, 0.2);
+    color: #ffffff;
+}
+
+
+/* ---- Bouton rétro ---- */
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1a1a1a;
+    background: #ffcc00;
+    border: 2px solid #000;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0px #000;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #ff9900;
+    box-shadow: 3px 3px 0px #333;
+}
+
+button:active {
+    background: #cc7700;
+    transform: translate(2px, 2px);
+}
+
+/* ---- Effet glitch (pour s'amuser 😆) ---- */
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 0px #ff003c, -2px -2px 0px #00e6ff; }
+    50% { text-shadow: -2px -2px 0px #ff003c, 2px 2px 0px #00e6ff; }
+    100% { text-shadow: 2px 2px 0px #ff003c, -2px -2px 0px #00e6ff; }
+}
+
+h1:hover {
+    animation: glitch 0.2s infinite alternate;
+}
+
+/* ---- Style du sélecteur de date ---- */
+#dateFilterContainer {
+    margin-bottom: 10px;
+    background: #2b2b2b;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid #ffcc00;
+    box-shadow: inset 3px 3px 0px #000;
+    text-align: center;
+}
+
+#dateFilter {
+    background: #1a1a1a;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+}

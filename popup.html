@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker</title>
+
+    <!-- Intégration de Retro.css -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body class="retro-window">
+
+    <h1 class="retro-title">⏳ Time Tracker</h1>
+
+    <!-- Conteneur du graphique -->
+    <div id="chartContainer" class="retro-card">
+        <canvas id="timeChart"></canvas>
+    </div>
+
+    <!-- Sélecteur de date -->
+    <div id="dateFilterContainer">
+        <label for="dateFilter">📅 Filtrer par date :</label>
+        <input type="date" id="dateFilter">
+    </div>
+
+    <!-- Tableau des statistiques -->
+    <div id="tableContainer" class="retro-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Site</th>
+                    <th>Temps passé (min)</th>
+                </tr>
+            </thead>
+            <tbody id="statsTable"></tbody>
+        </table>
+    </div>
+
+    <!-- Bouton de réinitialisation -->
+    <button id="resetButton" class="retro-button">🔄 Reset</button>
+
+    <script src="js/chart.umd.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
